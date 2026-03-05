@@ -17,7 +17,7 @@ function procesarEntrada() {
     // 2. Estructura de Selección (Switch) para comandos específicos
     switch (input) {
         case "hola":
-            respuesta = "¡Saludos, desarrollador! JS te da la bienvenida.";
+            respuesta = "Saludos Profe";
             break;
             
         case "bucle":
