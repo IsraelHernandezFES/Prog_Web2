@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tareas Retro</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="crt-screen">
+        <div class="scanlines"></div> <div class="terminal-window">
+            <header>
+                <h1>> CONTROL_DE_TAREAS_v1.0</h1>
+                <p class="subtitle">Hernandez Pacheco Jesus Israel</p>
+            </header>
+            
+            <div class="input-group">
+                <span class="prompt">C:\></span>
+                <input type="text" id="inputTarea" placeholder="NUEVA_TAREA..." autofocus>
+                <button onclick="agregarTarea()">[ EJECUTAR ]</button>
+            </div>
+
+            <ul id="listaTareas">
+                </ul>
+            
+            <footer class="stats">
+                > ESTADO: <span id="contador">0</span> TAREAS_EN_MEMORIA.
+            </footer>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
