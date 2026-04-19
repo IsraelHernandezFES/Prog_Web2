@@ -1,0 +1,173 @@
+/* Variables de color estilo fósforo verde/Synthwave */
+:root {
+    --bg-color: #0c1016; /* Negro azulado profundo */
+    --main-green: #33ff33; /* Fósforo verde vibrante */
+    --dim-green: #004400; /* Verde oscuro para bordes */
+    --neon-glow: 0 0 10px rgba(51, 255, 51, 0.7);
+    --font-retro: 'VT323', monospace; /* Fuente de terminal */
+}
+
+body {
+    background-color: #000;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    color: var(--main-green);
+    font-family: var(--font-retro);
+    font-size: 1.2rem;
+    text-transform: uppercase; /* Todo en mayúsculas para más realismo */
+}
+
+/* --- EFECTOS CRT --- */
+.crt-screen {
+    position: relative;
+    width: 600px;
+    height: 80vh;
+    background-color: var(--bg-color);
+    border: 10px solid #333; /* Marco del monitor */
+    border-radius: 20px;
+    box-shadow: 0 0 50px rgba(0,0,0,0.5), inset 0 0 100px rgba(0,0,0,0.8);
+    overflow: hidden;
+    padding: 20px;
+}
+
+/* Líneas de escaneo horizontales sutiles */
+.scanlines {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(255,255,255,0) 50%,
+        rgba(0,0,0,0.1) 50%
+    );
+    background-size: 100% 4px;
+    z-index: 10;
+    pointer-events: none; /* No interfiere con los clics */
+}
+
+/* Animación de parpadeo global */
+@keyframes flicker {
+    0% { opacity: 0.98; }
+    5% { opacity: 0.95; }
+    10% { opacity: 0.99; }
+    15% { opacity: 0.93; }
+    100% { opacity: 1; }
+}
+
+.terminal-window {
+    position: relative;
+    z-index: 5;
+    animation: flicker 0.15s infinite;
+}
+
+/* --- ESTILOS DE COMPONENTES --- */
+header h1 {
+    font-size: 1.8rem;
+    margin: 0;
+    text-shadow: var(--neon-glow);
+}
+
+.subtitle {
+    color: var(--dim-green);
+    font-size: 0.9rem;
+    margin-top: 2px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 25px 0;
+    border-bottom: 2px solid var(--dim-green);
+    padding-bottom: 10px;
+}
+
+.prompt {
+    color: var(--main-green);
+    text-shadow: var(--neon-glow);
+}
+
+input[type="text"] {
+    flex-grow: 1;
+    background: transparent;
+    border: none;
+    color: var(--main-green);
+    font-family: var(--font-retro);
+    font-size: 1.2rem;
+    outline: none;
+    text-transform: uppercase;
+}
+
+/* Simular el cursor parpadeante */
+input::placeholder { color: var(--dim-green); }
+
+button {
+    background: transparent;
+    border: 2px solid var(--main-green);
+    color: var(--main-green);
+    font-family: var(--font-retro);
+    font-size: 1.1rem;
+    padding: 5px 15px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.2s;
+}
+
+button:hover {
+    background-color: var(--main-green);
+    color: var(--bg-color);
+    box-shadow: var(--neon-glow);
+}
+
+/* --- LISTA DE TAREAS --- */
+ul {
+    list-style: none;
+    padding: 0;
+    height: 50vh; /* Altura fija para scroll */
+    overflow-y: auto;
+    border: 1px solid var(--dim-green);
+}
+
+/* Estilo personalizado del scroll retro */
+ul::-webkit-scrollbar { width: 8px; }
+ul::-webkit-scrollbar-track { background: var(--bg-color); }
+ul::-webkit-scrollbar-thumb { background: var(--main-green); }
+
+li {
+    padding: 10px;
+    border-bottom: 1px solid var(--dim-green);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li:hover {
+    background-color: rgba(51, 255, 51, 0.1);
+}
+
+.tarea-nombre {
+    color: var(--main-green);
+}
+
+/* Botón de borrado estilo 'Matrix' */
+.btn-delete {
+    border: 1px solid #ff3333;
+    color: #ff3333;
+    font-size: 0.9rem;
+    padding: 2px 8px;
+}
+
+.btn-delete:hover {
+    background-color: #ff3333;
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 51, 51, 0.7);
+}
+
+.stats {
+    margin-top: 15px;
+    font-size: 1rem;
+    color: var(--dim-green);
+}
