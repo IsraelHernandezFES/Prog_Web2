@@ -1,0 +1,104 @@
+:root {
+    --bg-color: #0c1016;
+    --main-green: #33ff33;
+    --dim-green: #004400;
+    --neon-glow: 0 0 10px rgba(51, 255, 51, 0.7);
+    --font-retro: 'VT323', monospace;
+}
+
+body {
+    background-color: #000;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: var(--main-green);
+    font-family: var(--font-retro);
+}
+
+.crt-screen {
+    position: relative;
+    width: 400px; /* Ajustado para calculadora */
+    height: auto;
+    min-height: 500px;
+    background-color: var(--bg-color);
+    border: 10px solid #333;
+    border-radius: 20px;
+    box-shadow: 0 0 50px rgba(0,0,0,0.5), inset 0 0 100px rgba(0,0,0,0.8);
+    overflow: hidden;
+    padding: 30px;
+}
+
+.scanlines {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 50%, rgba(0,0,0,0.1) 50%);
+    background-size: 100% 4px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.terminal-window {
+    animation: flicker 0.15s infinite;
+}
+
+@keyframes flicker {
+    0% { opacity: 0.98; }
+    5% { opacity: 0.95; }
+    100% { opacity: 1; }
+}
+
+/* Estilo de la Cuadrícula de Botones */
+.grid-calculadora {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+button {
+    flex: 1;
+    background: transparent;
+    border: 2px solid var(--main-green);
+    color: var(--main-green);
+    font-family: var(--font-retro);
+    font-size: 1.5rem;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+button:hover {
+    background-color: var(--main-green);
+    color: var(--bg-color);
+    box-shadow: var(--neon-glow);
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid var(--dim-green);
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    background: transparent;
+    border: none;
+    color: var(--main-green);
+    font-family: var(--font-retro);
+    font-size: 2rem;
+    width: 100%;
+    outline: none;
+    text-align: right;
+    text-shadow: var(--neon-glow);
+}
+
+.btn-delete { border-color: #ff3333; color: #ff3333; }
+.btn-delete:hover { background-color: #ff3333; color: white; }

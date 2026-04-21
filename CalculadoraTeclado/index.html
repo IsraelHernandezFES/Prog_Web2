@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROBCO INDUSTRIES UNIFIED OPERATING SYSTEM</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="crt-screen">
+        <div class="scanlines"></div>
+        
+        <div class="terminal-window">
+            <header>
+                <h1>ROBCO INDUSTRIES v1.2.1</h1>
+                <p class="subtitle">CALCULADORA DE CAMPO - MODELO VAULT-TEC</p>
+            </header>
+
+            <div class="input-group">
+                <span class="prompt">></span>
+                <input type="text" id="pantalla" placeholder="ESPERANDO ENTRADA..." readonly>
+            </div>
+
+            <div class="grid-calculadora">
+                <div class="row">
+                    <button onclick="agregarPantalla('7')">7</button>
+                    <button onclick="agregarPantalla('8')">8</button>
+                    <button onclick="agregarPantalla('9')">9</button>
+                    <button onclick="agregarPantalla('/')">/</button>
+                </div>
+                <div class="row">
+                    <button onclick="agregarPantalla('4')">4</button>
+                    <button onclick="agregarPantalla('5')">5</button>
+                    <button onclick="agregarPantalla('6')">6</button>
+                    <button onclick="agregarPantalla('*')">*</button>
+                </div>
+                <div class="row">
+                    <button onclick="agregarPantalla('1')">1</button>
+                    <button onclick="agregarPantalla('2')">2</button>
+                    <button onclick="agregarPantalla('3')">3</button>
+                    <button onclick="agregarPantalla('-')">-</button>
+                </div>
+                <div class="row">
+                    <button onclick="limpiarPantalla()" class="btn-delete">C</button>
+                    <button onclick="agregarPantalla('0')">0</button>
+                    <button onclick="calcularResultado()">=</button>
+                    <button onclick="agregarPantalla('+')">+</button>
+                </div>
+            </div>
+
+            <div class="stats">
+                ESTADO: DISPOSITIVO EN LÍNEA | MEMORIA: OK
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
