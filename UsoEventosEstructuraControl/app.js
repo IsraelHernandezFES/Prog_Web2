@@ -26,7 +26,7 @@ function mostrarCarrito(carrito) {
   cont.innerHTML = '';
 
   if (carrito.length === 0) {
-    cont.innerHTML = '<p class="subtitle">--- NO HAY OBJETOS EN EL INVENTARIO ---</p>';
+    cont.innerHTML = '<p class="subtitle">NO HAY OBJETOS EN EL INVENTARIO</p>';
     return;
   }
 
@@ -69,7 +69,7 @@ document.getElementById('formulario').addEventListener('submit', function(event)
   
   agregarProducto(carrito, new Producto(nombre, precio), cantidad);
   
-  // Limpia el input pero mantiene el foco para el siguiente objeto
+  // Limpia el input 
   this.reset();
   document.getElementById('nombre').focus();
 });
